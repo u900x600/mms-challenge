@@ -1,0 +1,53 @@
+version: "3.8"
+
+networks:
+  mms-challenge: {}
+
+services:
+  root:
+    image: node:19
+    volumes:
+    - .:/var/app
+    networks:
+      - mms-challenge
+    working_dir: /var/app
+    ports:
+      - 8082:80
+      - 9000:9000
+    user: node
+    command: "/bin/bash -c 'tail -f ./package.json'"
+
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    networks:
+      - mms-challenge
+    volumes:
+      - ./pkgs/db/initdb.d:/docker-entrypoint-initdb.d
+    environment:
+      MONGO_INITDB_DATABASE: mms
+    ##  MONGO_INITDB_ROOT_USERNAME: root
+    ##  MONGO_INITDB_ROOT_PASSWORD: example
+
+  fe:
+    image: node:19
+    volumes:
+    - .:/var/app
+    working_dir: /var/app/pkgs/fe
+    command: /bin/sh -c 'npx webpack-dev-server'
+    ports:
+    - 8080:9000
+
+  srv:
+    image: node:19
+    ports:
+    - 8081:80
+    - 8443:443
+    user: node
+    volumes:
+    - .:/var/app
+    working_dir: /var/app/pkgs/srv
+    networks:
+    - mms-challenge
+    command: "/bin/sh -c 'npm run start'"

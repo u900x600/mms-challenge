@@ -1,0 +1,139 @@
+html {
+  color: #fff;
+  font-family: 'monospace';
+  --padding: 5px;
+  --margin: 5px;
+}
+
+body {
+  background: rgb(7, 14, 6);
+  padding: 0px;
+  margin: 0px;;
+}
+
+.hint {
+  color: rgb(117, 117, 117);
+  font-size: smaller;
+}
+
+h1,h2,h3,h4,h5,h6,header,div,ol,ul,li { overflow: auto; }
+
+h4 {
+  margin-top: calc(var(--margin));
+  margin-bottom: calc(var(--margin) * 2);
+}
+
+input[type="text"] {
+  border-radius: 0px;
+  border: none;
+  background: #999;
+
+}
+
+button {
+  border-radius: 0px;
+}
+
+.stage {
+  max-width: 900px;
+  margin: 0px auto;
+  
+}
+
+header {
+  margin: var(--margin); 
+  padding: var(--padding);
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: #fff 1px solid;
+}
+
+
+
+header * {
+  margin: 0px var(--margin);
+}
+
+
+main {
+  padding: var(--padding);
+  margin: var(--margin);
+}
+
+/* ############################################# */
+
+.main-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-list-item {
+  display: block;
+  background-color: #333;
+  padding: calc(var(--padding) * 2);
+  margin-bottom: calc(var(--margin) * 4);
+}
+
+.order-state {
+  text-decoration: underline;
+  margin: var(--padding);
+}
+
+.order-state-open {
+  color: #00ff00;
+}
+
+.order-state-complete {
+  color: #0000ff;
+}
+
+.order-state-in_progress {
+  color: #ff0000;
+}
+
+.action-common {
+  margin-bottom: var(--margin);
+  font-weight: bold;;
+}
+
+.log {
+  padding: 0px;
+  margin: 0px;;
+}
+
+.log > li {
+  display: block;
+  margin-bottom: var(--margin);
+}
+
+.log-lines {
+  padding: 0px;
+  margin: calc(var(--margin) * 2) 0px;;
+}
+
+.order-actions {
+  display: flex;
+  flex-wrap: wrap;;
+}
+
+.order-actions > * {
+  display: block;
+  margin: var(--margin);
+}
+
+.create-action {
+  padding: var(--padding);
+  background-color: #333;
+
+}
+
+.create-action > * {
+  display: block;
+}
+
+.create-action > textarea {
+  width: 100%;
+  margin: calc(var(--margin) * 2) 0px;
+}
+

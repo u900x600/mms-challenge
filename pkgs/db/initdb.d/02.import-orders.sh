@@ -1,0 +1,1 @@
+## mongoimport --db='mms'  --collection='orders' --jsonArray  /docker-entrypoint-initdb.d/orders.json

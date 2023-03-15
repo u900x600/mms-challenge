@@ -1,0 +1,5 @@
+[
+  { "state": "OPEN"         , "log": [{"type": "CREATED", "at": "01-01-1970", "by": "root"}] },
+  { "state": "IN_PROGRESS"  , "log": [{"type": "CREATED", "at": "01-01-1970", "by": "root"}] },
+  { "state": "COMPLETE"     , "log": [{"type": "CREATED", "at": "01-01-1970", "by": "root"}] }
+]
